@@ -1,0 +1,149 @@
+{% url 'ShopHome' as shop %}
+{% url 'AboutUs' as about %}
+{% url 'ContactUs' as contact %}
+{% url 'TrackingStatus' as track %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/71a5b243f8.js" crossorigin="anonymous"></script>
+    <title>{% block title%} {% endblock %}</title>
+     <style>
+     
+       {% block css %}  {% endblock %}
+
+       .navbar-dark .navbar-nav .active>.nav-link, 
+       .navbar-dark .navbar-nav .nav-link.active, 
+       .navbar-dark .navbar-nav .nav-link.show, 
+       .navbar-dark .navbar-nav .show>.nav-link{
+               color: yellow;
+               background-color: green;
+               font-size: 24px;
+               border-radius: 5px;
+               box-sizing: border-box;
+           }
+
+     </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Logo for shpo with link -->
+ <a class="navbar-brand" href="/shop"> <img src="{% static 'shop/logo.png' %}" style="width: 100px; height:50px; " alt="Logo" margin="2px" /> </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == shop %} active {% endif %}" href="/shop" style="font-size: 18px;" onMouseOver="this.style.color='red'"
+          onMouseOut="this.style.color='yellow'" >Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == about %} active {% endif %}" href="/shop/about" style="font-size: 18px;" onMouseOver="this.style.color='red'"
+          onMouseOut="this.style.color='yellow'" >About Us</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == track %} active {% endif %}" href="/shop/tracker" style="font-size: 18px;" onMouseOver="this.style.color='red'"
+          onMouseOut="this.style.color='yellow'" >Tracker</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link {% if request.path == contact %} active {% endif %}" href="/shop/contact" style="font-size: 18px;" onMouseOver="this.style.color='red'"
+          onMouseOut="this.style.color='yellow'" >Need Help</a>
+      </li>
+
+
+    </ul>
+    <form method='get' action='/shop/search/' class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Here" aria-label="Search" name="search" id="search" style="border-radius: 10px; box-shadow: 2px 2px gray;">
+
+
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="font-size: 19px; border-radius: 5px; box-shadow: 2px 2px gray;"> <i class="fa fa-search" aria-hidden="true"></i>Search</button>
+    </form>
+
+    <button type="button" class="btn btn-secondary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus." style="box-shadow: 2px 2px gray; border-radius: 10px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  Cart(<span id="cart">0</span>)
+  
+</button>
+  </div>
+</nav>
+  {% block body %} {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+    {% block js %} {% endblock %}
+
+     <!-- Footer -->
+<br>
+<footer class="text-center text-lg-start bg-light text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-6 d-none d-lg-block" >
+      <span style="font-size: 15px;"> Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="https://www.facebook.com/" class="me-4 text-reset">
+        <i class="fab fa-facebook fa-2x"></i>
+      </a>
+      <a href="https://www.twitter.com/" class="me-4 text-reset">
+        <i class="fab fa-twitter fa-2x"></i>
+      </a>
+      <a href="https://www.instagram.com/" class="me-4 text-reset">
+        <i class="fab fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://www.whatsapp.com/" class="me-4 text-reset">
+       <i class="fab fa-whatsapp fa-2x"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); font-size: 15px;">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="/shop" style="font-size: 15px;"> <font color="green"><b>eshop.com.np</b></font></a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+<!-- GetButton.io widget-->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            facebook: "679198202458522", // Facebook page ID
+            whatsapp: "9848313081", // WhatsApp number
+            call_to_action: "Message us", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "facebook,whatsapp", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+
+  </body>
+</html>

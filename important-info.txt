@@ -1,0 +1,11 @@
+	----------------------------------------------------
+	shopping-cart-web-app
+	----------------------------------------------------
+	python version : 3.8.5		| latest : 3.9.6
+	django version : 3.2.0 		| latest : 3.2.6
+	sqlite version : 3.33.0		| latest : 3.36.0
+
+	HTML version : 5
+	Bootstrap version : 4.5.2	| latest : 5.0
+	JavaScript version : 3.4.1	| latest : 3.6.0
+	----------------------------------------------------
