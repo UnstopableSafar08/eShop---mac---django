@@ -18,8 +18,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+admin.site.site_header  =  "Admin | eShop"  
+admin.site.site_title  =  "Welcome to eShop Admin"
+admin.site.index_title  =  "eShop - Admin"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('shop/', include('shop.urls')),
-    path("", views.index, name="home")
+    path('', include('shop.urls'))
+    # path("", views.index, name="home")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
