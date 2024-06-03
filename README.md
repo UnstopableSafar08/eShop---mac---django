@@ -1,4 +1,4 @@
-# mac
+# **mac**
 this Project is made up of with Django(python) framework and sqlite as a database and html, css, js as a Frontend.
 
 
@@ -9,7 +9,7 @@ this Project is made up of with Django(python) framework and sqlite as a databas
 ```
 ```bash
 # Install python firest : Link below;
-[ Python Installation ](https://github.com/UnstopableSafar08/python-scripts)
+[Python Installation](https://github.com/UnstopableSafar08/python-scripts)
 
 # make a latest version of python as a default  
 sudo alternatives --config python3.9
