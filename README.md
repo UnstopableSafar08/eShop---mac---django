@@ -2,16 +2,19 @@
 this Project is made up of with Django(python) framework and sqlite as a database and html, css, js as a Frontend.
 
 
+
+``` bash
+# basic package installatoions
+ yum install telnet curl wget net-tools traceroute zip unzip rsync git-all -y
+```
 ```bash
-# Install python firest : Link ---> https://github.com/UnstopableSafar08/python-scripts
+# Install python firest : Link below;
+[ Python Installation ](https://github.com/UnstopableSafar08/python-scripts)
+
 # make a latest version of python as a default  
 sudo alternatives --config python3.9
 python --version
 # Python 3.9.18
-```
-``` bash
-# basic package installatoions
- yum install telnet curl wget net-tools traceroute zip unzip rsync git-all -y
 ```
 ```bash
 ## Conda installation
